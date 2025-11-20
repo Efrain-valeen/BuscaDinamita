@@ -11,7 +11,7 @@ def index():
 def save_winner():
     data = request.get_json()
 
-    winner = Winner(id=0 ,name=data['name'], email=data['email'])
+    winner = Winner(id=0 ,name=data['name'], email=data['email'], phrase=data['phrase'])
 
     winner.save()
     if winner.id != 0:
