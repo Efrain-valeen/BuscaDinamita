@@ -4,14 +4,7 @@
  
 {% include 'header.html' %}
 <body>
-  <div class="content-wrapper">
-    
- <script>
-  window.IMG_OK = "{{ url_for('static', filename='images/cheem.png') }}";
-  window.IMG_BAD = "{{ url_for('static', filename='images/malo.png') }}";
- </script>
- 
-    <section id="snippet-3" class="wrapper bg-light wrapper-border">
+  <section id="snippet-3" class="wrapper bg-light wrapper-border">
       <div class="container pt-5 pb-13">
 
         <h2 class="display-4 mb-3 text-center">Buscaminas Cheems</h2>
@@ -164,9 +157,4 @@
     </div> 
   </div> 
 </div>
-  <script src="{{ url_for('static', filename='js/plugins.js') }}" defer></script>
- <script src="{{ url_for('static', filename='js/theme.js') }}" defer></script>
- <script src="{{ url_for('static', filename='js/cheems.js') }}" defer></script>
-</body>
-
-</html>
+{% include 'footer.html' %}

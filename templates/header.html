@@ -24,7 +24,7 @@
             <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Consultar ganadores</a>
+                  <a class="nav-link" href="{{ url_for('get_winners') }}" >Consultar ganadores</a>
                 </li>
               </ul>
             </div>
@@ -32,3 +32,12 @@
         </div>
       </nav>
     </header>
+
+    <div class="content-wrapper">
+    
+ <script>
+  window.IMG_OK = "{{ url_for('static', filename='images/cheem.png') }}";
+  window.IMG_BAD = "{{ url_for('static', filename='images/malo.png') }}";
+ </script>
+ 
+    

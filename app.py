@@ -19,7 +19,9 @@ def save_winner():
     else:
         return jsonify ({"success": False}), 500
 
-
+@app.route('/winners', methods=['GET'])
+def get_winners():
+    return render_template('winners.html', winners = Winner.get_all())
 
 
 
