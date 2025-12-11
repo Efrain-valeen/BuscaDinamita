@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const phrase = document.getElementById("phrase").value.trim();
-        const intentos = parseInt(document.getElementById("contador-intentos").innerText);
+        
 
         if (!name || !email) {
             alert("Por favor, completa los campos obligatorios.");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(result => {
                 if (result.success) {
-                    //alert("¡Datos guardados correctamente! Gracias por participar.");
+                    alert("¡Datos guardados correctamente! Gracias por participar.");
                     const modalElement = document.getElementById('modal-winner');
                     const modalInstance = bootstrap.Modal.getInstance(modalElement);
                     if (modalInstance) {
@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         // B. Forzar el contador a 0 para que el reset lo deje en 1
                     
                     }
-                    
+                     intentos = 0;
+                    resetGame();
                     
                 } else {
                     alert("Hubo un error al guardar tus datos. Por favor, intenta mas tarde.");
                 }
-                intentos = 0;
-                    resetGame();
+               
             });
     }
 

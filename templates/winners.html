@@ -1,39 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
- 
 {% include 'header.html' %}
-<section id="snippet-3" class="wrapper bg-light wrapper-border">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/winners.css') }}">
+
+<body>
+  <div class="content-wrapper">
+    <section class="wrapper bg-light wrapper-border">
       <div class="container pt-5 pb-13">
 
-        <h2 class="display-4 mb-3 text-center">Buscaminas Cheems</h2>
-        <p class="lead text-center mb-10 px-md-16 px-lg-0">lista de ganadores.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="display-4 mb-3">Salón de la Fama Cheems</h2>
+            <p class="lead text-muted mb-6">
+              Los mejores jugadores que han sobrevivido al reto.
+            </p>
+          </div>
+        </div>
 
-<table>
-<thead>
-<tr>
-    <th>Nombre</th>
-    <th>Email</th>
-    <th>Frase motivadora</th>
-    <th>Intentos</th>
-    <th>Fecha</th>
-    
-</tr>   
-</thead>
-<tbody>
-{% for w in winners %}
-<tr>
-    <td>{{ w.name }}</td>
-    <td>{{ w.email }}</td>
-    <td>{{ w.phrase }}</td>
-    <td>{{ w.intentos }}</td>
-    <td>{{ w.creado }}</td>
-</tr>
-{% else %}
-<tr>
-    <td colspan="5">No hay ganadores aún.</td>
-</tr>
-{% endfor %}
-</table>
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            
+            <div class="winners-card"> <div class="table-responsive">
+                <table class="custom-table"> <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Frase</th>
+                      <th scope="col" class="text-center">Intentos</th>
+                      <th scope="col" class="text-end">Fecha</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for w in winners %}
+                    <tr>
+                      <td class="winner-name">
+                        {{ w.name }}
+                      </td>
+                      <td class="winner-email">
+                        {{ w.email }}
+                      </td>
+                      <td class="winner-phrase">
+                        "{{ w.phrase }}"
+                      </td>
+                      <td class="text-center">
+                        <span class="attempts-badge">{{ w.intentos }}</span>
+                      </td>
+                      <td class="text-end winner-date">
+                        {{ w.creado }}
+                      </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                      <td colspan="5">
+                        <div class="empty-state">
+                          <i>🏆</i> 
+                          <h4>Aún no hay ganadores</h4>
+                          <p>¡Sé el primero en aparecer aquí!</p>
+                          <a href="/" class="btn btn-primary rounded-pill mt-2">Jugar</a>
+                        </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-{% include 'footer.html' %}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,198 @@
+:root {
+  /* --- Paleta Cyberpunk  */
+  --bg-body: #050505;          
+  --bg-card: #111111;          
+  --text-main: #e0e0e0;        
+  --text-muted: #888888;
+  
+  --neon-blue: #00f3ff;        
+  --neon-red: #ff0055;         /
+  --border-color: #333;
+  
+  --sombra-neon-blue: 0 0 10px rgba(0, 243, 255, 0.5);
+  --sombra-neon-red: 0 0 10px rgba(255, 0, 85, 0.5);
+}
+
+/* Fondo general de la página para esta sección */
+body, .content-wrapper, .wrapper.bg-light {
+  background-color: var(--bg-body) !important;
+  color: var(--text-main);
+}
+
+/* --- Título con efecto Glitch --- */
+.glitch-title {
+  font-family: 'Courier New', Courier, monospace; 
+  font-weight: 800;
+  color: var(--text-main);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 0px var(--neon-red), -2px -2px 0px var(--neon-blue);
+}
+
+/* --- Tarjeta Estilo Terminal --- */
+.winners-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--neon-blue); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+
+/* --- Tabla Oscura --- */
+.custom-table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0;
+  color: var(--text-main);
+}
+
+.custom-table th {
+  background-color: #000;
+  color: var(--neon-blue);
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 1.2rem;
+  border-bottom: 2px solid var(--neon-blue);
+  letter-spacing: 1px;
+}
+
+.custom-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #222;
+  vertical-align: middle;
+}
+
+/* Filas */
+.custom-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: rgba(0, 243, 255, 0.05); 
+  transform: scale(1.03); 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 10;
+}
+
+/* Colores de texto específicos */
+.winner-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.winner-email {
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.winner-phrase {
+  color: var(--neon-red); /* Frase en rojo neón */
+  font-style: italic;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Badge de intentos estilo 'Chip' */
+.attempts-badge {
+  background: transparent;
+  color: var(--neon-blue);
+  border: 1px solid var(--neon-blue);
+  padding: 0.2em 0.8em;
+  font-family: monospace;
+  box-shadow: var(--sombra-neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.winner-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* --- Estado Vacío --- */
+.empty-state {
+  padding: 4rem;
+  color: var(--text-muted);
+  border: 1px dashed #333;
+  margin: 2rem;
+}
+.empty-state i {
+  font-size: 3rem;
+  color: var(--neon-red);
+  margin-bottom: 1rem;
+  display: block;
+  text-shadow: var(--sombra-neon-red);
+}
+
+/* Botón Glitch */
+.btn-glitch {
+  background-color: var(--neon-red);
+  color: #fff;
+  border: none;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 25px;
+  box-shadow: var(--sombra-neon-red);
+  transition: 0.3s;
+}
+.btn-glitch:hover {
+  background-color: #d00045;
+  color: #fff;
+  box-shadow: 0 0 20px var(--neon-red);
+}
+
+
+.wrapper-border {
+  border-bottom: 1px solid #111 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+
+/* Ancho de la barra */
+::-webkit-scrollbar {
+  width: 8px;      
+  height: 8px;     
+}
+
+
+::-webkit-scrollbar-track {
+  background: #050505; 
+
+
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-red); 
+  box-shadow: 0 0 10px var(--neon-red);
+  cursor: pointer;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #050505;
+}
+
+/
+.table-responsive {
+  overflow-x: auto; 
+  overflow-y: hidden; /
+  padding-bottom: 5px; 
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 0px; 
+  background: transparent; 
+}
